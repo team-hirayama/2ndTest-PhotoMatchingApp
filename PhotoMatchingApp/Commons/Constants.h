@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Constants : NSObject
+extern NSString *const STRING_API_KEY;
+extern NSString *const STRING_API_URL;
 
 @end
