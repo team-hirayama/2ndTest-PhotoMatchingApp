@@ -14,6 +14,8 @@
 
 @implementation MainViewController
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -23,5 +25,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - Actions
+
+
+#pragma mark - Public
+
+#pragma mark - Private
+
+#pragma mark - UITableViewDataSource
+
+
+#pragma mark - UITableViewDeletes
+
+
 
 @end
