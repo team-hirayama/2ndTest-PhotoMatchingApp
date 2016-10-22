@@ -9,7 +9,10 @@
 #import <Realm/Realm.h>
 
 @interface Blog : RLMObject
-<# Add properties here to define the model #>
+@property (nonatomic) NSInteger id;
+@property (nonatomic, weak) NSString *name;
+@property (nonatomic, weak) NSString *needspassword;
+@property (nonatomic, weak) NSURL *url;
 @end
 
 // This protocol enables typed collections. i.e.:
