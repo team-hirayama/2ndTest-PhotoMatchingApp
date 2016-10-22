@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="88" width="600" height="468"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultCell" rowHeight="97" id="FXS-7G-Xy8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultCell" rowHeight="97" id="FXS-7G-Xy8" customClass="ResultTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="600" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FXS-7G-Xy8" id="l7W-ci-OCy">
@@ -52,6 +52,10 @@
                                                 <constraint firstItem="gXY-lY-5A8" firstAttribute="leading" secondItem="l7W-ci-OCy" secondAttribute="leadingMargin" constant="3" id="zHi-ec-8Gn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="resultPhotoImageView" destination="gXY-lY-5A8" id="idN-qx-neN"/>
+                                            <outlet property="titleLabel" destination="nci-4r-Yso" id="G75-C0-qN4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
