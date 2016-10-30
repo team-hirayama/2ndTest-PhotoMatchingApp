@@ -11,7 +11,6 @@
 @interface Blog : RLMObject
 @property (nonatomic) NSInteger id;
 @property (nonatomic, weak) NSString *name;
-@property (nonatomic, weak) NSString *needspassword;
 @property (nonatomic, weak) NSURL *url;
 @end
 

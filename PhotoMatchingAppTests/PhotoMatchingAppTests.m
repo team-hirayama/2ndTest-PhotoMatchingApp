@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Kohey. All rights reserved.
 //
 
+@class APIAcceccObject;
 #import <XCTest/XCTest.h>
 
 @interface PhotoMatchingAppTests : XCTestCase
@@ -28,6 +29,11 @@
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
+
+- (BOOL)testBeginParse:(id) xmlData{
+    return NO;
+}
+
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.

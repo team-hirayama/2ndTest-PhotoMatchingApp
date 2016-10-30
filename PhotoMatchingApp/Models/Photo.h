@@ -14,7 +14,8 @@
 @property (nonatomic, weak) NSString *serverId;
 @property (nonatomic, weak) NSString *photoId;
 @property (nonatomic, weak) NSString *secretId;
-@property (nonatomic, weak) NSString *size;
-@property (nonatomic, weak) NSMutableArray *photos;
+@property (nonatomic, weak) NSString *owner;
+@property (nonatomic, weak) NSString *title;
+@property (nonatomic, weak) NSURL *url;
 
 @end

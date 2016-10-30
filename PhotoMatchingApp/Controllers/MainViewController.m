@@ -13,7 +13,7 @@
 
 @interface MainViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *searchTextField;
-@property (nonatomic, weak) NSMutableArray *photos;
+@property (nonatomic, weak) NSMutableArray<Photo *> *photos;
 
 @end
 
@@ -52,10 +52,15 @@
  */
 - (void) getConnection {
     APIAcceccObject *access = [APIAcceccObject new];
+    
     // ネットワークを確かめる
     if ([access isSuccessedinConnectiog]) {
+        
         // API取得
         [access getJsonData:self.searchTextField.text];
+        self.photos = access.photos;
+        NSLog(@"%@", self.photos);
+    
     } else {
         NSLog(@"Not connection");
     }
@@ -78,8 +83,8 @@
         cell = [[ResultTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                           reuseIdentifier:identifier];
     }
-
-    NSData *imageData = [NSData dataWithContentsOfURL:self.photos[indexPath.row]];
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:self.photos[indexPath.row].url];
     cell.resultPhotoImageView.image = [UIImage imageWithData:imageData];
     return cell;
 

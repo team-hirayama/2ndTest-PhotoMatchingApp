@@ -9,8 +9,11 @@
 #import "Photo.h"
 #import <Foundation/Foundation.h>
 
-@interface APIAcceccObject : NSObject
+@interface APIAcceccObject : NSObject <NSXMLParserDelegate>
+@property (nonatomic, weak) Photo *photo;
+@property (nonatomic, strong) NSMutableArray<Photo *> *photos;
 - (BOOL)isSuccessedinConnectiog;
 - (void)getJsonData:(NSString *)keyword;
 
 @end
+
