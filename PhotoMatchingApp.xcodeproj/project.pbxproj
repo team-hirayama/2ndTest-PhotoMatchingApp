@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4F7169A77766B8F4220D28E1 /* libPods-PhotoMatchingAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FFB8C9B1873629261EFC24 /* libPods-PhotoMatchingAppTests.a */; };
 		D34D18FFD3F53F2AC7865779 /* libPods-PhotoMatchingApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B42C7BDAEFD91777254021E8 /* libPods-PhotoMatchingApp.a */; };
+		E1946EED1DC4FF74000CF914 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = E1946EEC1DC4FF74000CF914 /* Photo.m */; };
+		E1946EEE1DC4FF74000CF914 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = E1946EEC1DC4FF74000CF914 /* Photo.m */; };
+		E1946EF01DC59EAF000CF914 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E1946EEF1DC59EAF000CF914 /* libxml2.tbd */; };
 		E1D86E311DBB1EF600814A4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D86E301DBB1EF600814A4A /* main.m */; };
 		E1D86E341DBB1EF600814A4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D86E331DBB1EF600814A4A /* AppDelegate.m */; };
 		E1D86E371DBB1EF600814A4A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D86E361DBB1EF600814A4A /* MainViewController.m */; };
@@ -50,6 +53,9 @@
 		B42C7BDAEFD91777254021E8 /* libPods-PhotoMatchingApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoMatchingApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1AEFE81978E374A2319DF49 /* libPods-PhotoMatchingAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoMatchingAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97709D47A0C3B132BCAE598 /* Pods-PhotoMatchingAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoMatchingAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoMatchingAppUITests/Pods-PhotoMatchingAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1946EEB1DC4FF74000CF914 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = Models/Photo.h; sourceTree = "<group>"; };
+		E1946EEC1DC4FF74000CF914 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = Models/Photo.m; sourceTree = "<group>"; };
+		E1946EEF1DC59EAF000CF914 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		E1D86E2C1DBB1EF600814A4A /* PhotoMatchingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoMatchingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D86E301DBB1EF600814A4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1D86E321DBB1EF600814A4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Delegetes/AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1946EF01DC59EAF000CF914 /* libxml2.tbd in Frameworks */,
 				D34D18FFD3F53F2AC7865779 /* libPods-PhotoMatchingApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +116,7 @@
 		53C30EAFBF9AE4397D9E70F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1946EEF1DC59EAF000CF914 /* libxml2.tbd */,
 				B42C7BDAEFD91777254021E8 /* libPods-PhotoMatchingApp.a */,
 				06FFB8C9B1873629261EFC24 /* libPods-PhotoMatchingAppTests.a */,
 				C1AEFE81978E374A2319DF49 /* libPods-PhotoMatchingAppUITests.a */,
@@ -198,6 +206,8 @@
 			children = (
 				E1D86E6B1DBB280C00814A4A /* Blog.h */,
 				E1D86E6C1DBB280C00814A4A /* Blog.m */,
+				E1946EEB1DC4FF74000CF914 /* Photo.h */,
+				E1946EEC1DC4FF74000CF914 /* Photo.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -205,6 +215,7 @@
 		E1D86E631DBB1F1100814A4A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E1D86E381DBB1EF600814A4A /* Main.storyboard */,
 				E1D86E351DBB1EF600814A4A /* MainViewController.h */,
 				E1D86E361DBB1EF600814A4A /* MainViewController.m */,
 				E1D86E3D1DBB1EF600814A4A /* LaunchScreen.storyboard */,
@@ -215,7 +226,6 @@
 		E1D86E641DBB1F1B00814A4A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E1D86E381DBB1EF600814A4A /* Main.storyboard */,
 				E1D86E731DBB352800814A4A /* ResultTableViewCell.h */,
 				E1D86E741DBB352800814A4A /* ResultTableViewCell.m */,
 			);
@@ -515,6 +525,7 @@
 				E1D86E371DBB1EF600814A4A /* MainViewController.m in Sources */,
 				E1D86E341DBB1EF600814A4A /* AppDelegate.m in Sources */,
 				E1D86E311DBB1EF600814A4A /* main.m in Sources */,
+				E1946EED1DC4FF74000CF914 /* Photo.m in Sources */,
 				E1D86E691DBB234100814A4A /* APIAcceccObject.m in Sources */,
 				E1D86E751DBB352800814A4A /* ResultTableViewCell.m in Sources */,
 				E1D86E721DBB286000814A4A /* Constants.m in Sources */,
@@ -525,6 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1946EEE1DC4FF74000CF914 /* Photo.m in Sources */,
 				E1D86E4A1DBB1EF600814A4A /* PhotoMatchingAppTests.m in Sources */,
 				E1D86E6E1DBB280C00814A4A /* Blog.m in Sources */,
 			);
@@ -610,7 +622,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -648,7 +660,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -663,6 +675,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PhotoMatchingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.kohei.PhotoMatchingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -678,6 +691,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PhotoMatchingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.kohei.PhotoMatchingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

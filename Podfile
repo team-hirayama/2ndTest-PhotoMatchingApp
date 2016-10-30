@@ -6,7 +6,7 @@ target 'PhotoMatchingApp' do
   # use_frameworks!
   pod 'Realm'
   pod 'AFNetworking', '~> 2.0' 
-  pod 'objectiveflickr'
+#  pod 'objectiveflickr'
 
   # Pods for PhotoMatchingApp
   
