@@ -101,6 +101,8 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ResultTableView" destination="YUC-rJ-wbJ" id="ZzP-R5-7TN"/>
+                        <outlet property="resultTableView" destination="YUC-rJ-wbJ" id="7ao-DN-NpI"/>
                         <outlet property="searchTextField" destination="9VJ-jA-CZU" id="Z0z-7c-VlG"/>
                     </connections>
                 </viewController>

@@ -8,13 +8,14 @@
 
 #import "APIAcceccObject.h"
 #import "MainViewController.h"
-#import "Photo.h"
+#import "blog.h"
 #import "ResultTableViewCell.h"
 
-@interface MainViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface MainViewController () <UITableViewDataSource,UITableViewDelegate,APIAcceccObjectDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *searchTextField;
-@property (nonatomic, weak) NSMutableArray<Photo *> *photos;
-
+@property (nonatomic, weak) IBOutlet UITableView *resultTableView;
+@property (nonatomic, weak) APIAcceccObject *access;
+@property (nonatomic, weak) NSMutableArray<Blog *> *blogs;
 @end
 
 @implementation MainViewController
@@ -55,12 +56,9 @@
     
     // ネットワークを確かめる
     if ([access isSuccessedinConnectiog]) {
-        
         // API取得
+        access.delegate = self;
         [access getJsonData:self.searchTextField.text];
-        self.photos = access.photos;
-        NSLog(@"%@", self.photos);
-    
     } else {
         NSLog(@"Not connection");
     }
@@ -84,7 +82,7 @@
                                           reuseIdentifier:identifier];
     }
     
-    NSData *imageData = [NSData dataWithContentsOfURL:self.photos[indexPath.row].url];
+    NSData *imageData = [NSData dataWithContentsOfURL:self.blogs[indexPath.row].url];
     cell.resultPhotoImageView.image = [UIImage imageWithData:imageData];
     return cell;
 
@@ -93,7 +91,13 @@
 
 #pragma mark - UITableViewDelegate
 
+#pragma mark - APIAcceccObjectDelegate
 
+- (void) returnWithBlog:(NSMutableArray<Blog*> *)results {
+    self.blogs = self.access.blogs;
+    NSLog(@"%@", self.blogs);
+    [self.resultTableView reloadData];
+}
 
 
 @end

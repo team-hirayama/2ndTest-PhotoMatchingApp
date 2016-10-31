@@ -14,6 +14,11 @@
 
 @implementation APIAcceccObject
 
+/**
+ *  Confirm the
+ *
+ *  @return BOOL -> YES if the network is on line, and NO if not available.
+ */
 - (BOOL)isSuccessedinConnectiog {
     return YES;
 }
@@ -46,12 +51,18 @@
     NSXMLParser *parser = (NSXMLParser *)xmlData;
     parser.delegate = self;
     if ([parser parse]) {
-        NSLog(@"%@", self.photos);
+        // statement
     };
     return YES;
 }
 
-
+/**
+ *  Fomulate a URL of photo data source.
+ *
+ *  @param photo, which is consisted with the datas parsed from Flickr.
+ *
+ *  @return String, which is
+ */
 - (NSString *)formulateWithPhoto:(Photo *)photo {
     return [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_m.jpg", photo.farmId, photo.serverId, photo.secretId];
 }
@@ -72,13 +83,11 @@ didStartElement:(NSString *)elementName
     BOOL failure = [attributeDict[@"stat"] isEqualToString:@"fail"];
     if (failure) {
         NSLog(@"Fail");
-    }
-
-    if ([elementName isEqualToString:@"photos"]) {
+        return;
+    } else if ([elementName isEqualToString:@"photos"]) {
         NSLog(@"page: %@", attributeDict[@"page"]);
-    }
-    
-    if ([elementName isEqualToString:@"photo"]) {
+    } else if ([elementName isEqualToString:@"photo"]) {
+        
         Photo *photo = [Photo new];
         photo.farmId = attributeDict[@"farm"];
         photo.photoId = attributeDict[@"id"];
@@ -86,13 +95,15 @@ didStartElement:(NSString *)elementName
         photo.serverId = attributeDict[@"server"];
         photo.owner = attributeDict[@"owner"];
         photo.title = attributeDict[@"title"];
-    
+        
         NSString *urlString = [self formulateWithPhoto:photo];
-        photo.url = [NSURL URLWithString:urlString];
-        NSLog(@"url: %@", photo.url);
-        [self.photos addObject:photo];
+
+        Blog *blog = [Blog new];
+        blog.url = [NSURL URLWithString:urlString];
+        blog.photo = photo;
+        
+        [self.blogs addObject:blog];
     }
-    
 }
 
 
@@ -102,6 +113,7 @@ didStartElement:(NSString *)elementName
  qualifiedName:(nullable NSString *)qName {
     
 //    NSLog(@"要素の終了タグを読み込んだ: %@",elementName);
+    [self.delegate returnWithBlog:self.blogs];   //デリゲートメソッド
 }
 
 - (void)parser:(NSXMLParser *)parser

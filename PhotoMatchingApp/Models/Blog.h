@@ -6,14 +6,9 @@
 //  Copyright © 2016年 Kohey. All rights reserved.
 //
 
-#import <Realm/Realm.h>
+#import "Photo.h"
 
-@interface Blog : RLMObject
-@property (nonatomic) NSInteger id;
-@property (nonatomic, weak) NSString *name;
+@interface Blog : NSObject
 @property (nonatomic, weak) NSURL *url;
+@property (nonatomic, weak) Photo *photo;
 @end
-
-// This protocol enables typed collections. i.e.:
-// RLMArray<Blog>
-RLM_ARRAY_TYPE(Blog)
